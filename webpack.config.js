@@ -4,9 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: process.env.NODE_ENV === 'production' 
+      ? '/FirstClassCare/' 
+      : '/'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -41,6 +43,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      favicon: './public/assets/images/logo.png'
     }),
   ],
   devServer: {
