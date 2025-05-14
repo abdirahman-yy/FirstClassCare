@@ -2,7 +2,7 @@
   "name": "firstclasscare",
   "version": "1.0.0",
   "description": "FirstClass Care - Medical Transportation Service",
-  "homepage": "https://abdirahman-yy.github.io/FirstClassCare",
+  "homepage": "https://firstclasscaretransit.com",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",
