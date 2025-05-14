@@ -139,15 +139,15 @@ I welcome contributions! Here's how:
 ## Contact
 
 Developer: Abdirahman Mohamed
-- Email: [your.email@domain.com]
+- Email: [abdirahman.career@gmail.com]
 - GitHub: [https://github.com/abdirahman-yy](https://github.com/abdirahman-yy)
-- LinkedIn: [Your LinkedIn Profile]
+- LinkedIn: [https://www.linkedin.com/in/abdirahmanmohamed/]
 
 Project Link: [https://github.com/abdirahman-yy/FirstClassCare](https://github.com/abdirahman-yy/FirstClassCare)
 
 ## License
 
-Copyright © 2024 First Class Care Transit. All rights reserved.
+Copyright © 2025 First Class Care Transit. All rights reserved.
 
 ---
 Developed and maintained by Abdirahman Mohamed - Junior Full Stack Developer
