@@ -9,7 +9,9 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build:squarespace": "NODE_ENV=production webpack --mode production --config webpack.squarespace.js",
+    "export:squarespace": "node squarespace-export.js"
   },
   "keywords": [
     "medical",
@@ -32,6 +34,7 @@
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@types/react-icons": "^2.2.7",
+    "archiver": "^7.0.0",
     "html-webpack-plugin": "^5.5.3",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
