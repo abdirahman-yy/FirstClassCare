@@ -73,6 +73,34 @@ const HeroButtons = styled(motion.div)`
     border-radius: ${({ theme }) => theme.borderRadius.small};
     transition: all 0.3s ease;
     text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+    &.btn-primary {
+      background-color: ${({ theme }) => theme.colors.secondary};
+      color: white;
+      border: 2px solid ${({ theme }) => theme.colors.secondary};
+      
+      &:hover {
+        background-color: white;
+        color: ${({ theme }) => theme.colors.primary};
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+    }
+    
+    &.btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid white;
+      backdrop-filter: blur(10px);
+      
+      &:hover {
+        background-color: white;
+        color: ${({ theme }) => theme.colors.primary};
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+    }
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {

@@ -193,9 +193,9 @@ const AccessibilityPage: React.FC = () => {
                 We welcome your feedback on the accessibility of FirstClass Care Transit. Please let us know if you encounter accessibility barriers on our website:
               </p>
               <p>
-                <strong>Phone:</strong> <a href="tel:+16125551234">(612) 555-1234</a><br />
-                <strong>Email:</strong> <a href="mailto:accessibility@firstclasscare.com">accessibility@firstclasscare.com</a><br />
-                <strong>Postal Address:</strong> 123 Transit Way, Suite 456, Minneapolis, MN 55401
+                <strong>Phone:</strong> <a href="tel:+16512638764">(651) 263-8764</a><br />
+                <strong>Email:</strong> <a href="mailto:firstclasscaretransit@gmail.com">firstclasscaretransit@gmail.com</a><br />
+                <strong>Postal Address:</strong> 6160 Summit Drive, Brooklyn Center, MN 55430
               </p>
               <p>
                 We try to respond to feedback within 3 business days.

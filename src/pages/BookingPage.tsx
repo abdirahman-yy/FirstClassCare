@@ -733,7 +733,7 @@ const BookingPage: React.FC = () => {
               <div className="info-box">
                 <h4>Important Information</h4>
                 <p>Please book your transportation at least 24 hours in advance when possible.</p>
-                <p>For same-day emergency transportation, please call us directly at (612) 555-1234.</p>
+                <p>For same-day emergency transportation, please call us directly at (651) 263-8764.</p>
                 <p>Cancellations should be made at least 12 hours in advance to avoid cancellation fees.</p>
               </div>
 

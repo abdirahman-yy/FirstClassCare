@@ -267,29 +267,21 @@ const Footer: React.FC = () => {
           </FooterColumn>
           
           <FooterColumn>
-            <h3>Contact Us</h3>
+            <h3>Contact Info</h3>
             <div className="contact-item">
-              <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <address>
-                123 Transit Way, Suite 456<br />
-                Minneapolis, MN 55401
-              </address>
+              <i className="fas fa-map-marker-alt"></i>
+              <div>
+                6160 Summit Drive<br />
+                Brooklyn Center, MN 55430
+              </div>
             </div>
             <div className="contact-item">
-              <i className="fas fa-phone-alt" aria-hidden="true"></i>
-              <a href="tel:+16125551234">(612) 555-1234</a>
+              <i className="fas fa-phone"></i>
+              <a href="tel:+16512638764">(651) 263-8764</a>
             </div>
             <div className="contact-item">
-              <i className="fas fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:info@firstclasscare.com">info@firstclasscare.com</a>
-            </div>
-            <div className="contact-item">
-              <i className="fas fa-clock" aria-hidden="true"></i>
-              <span>
-                Monday - Friday: 8AM - 6PM<br />
-                Saturday: 9AM - 2PM<br />
-                Sunday: Closed
-              </span>
+              <i className="fas fa-envelope"></i>
+              <a href="mailto:firstclasscaretransit@gmail.com">firstclasscaretransit@gmail.com</a>
             </div>
           </FooterColumn>
         </FooterColumns>

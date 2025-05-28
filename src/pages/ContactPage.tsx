@@ -188,7 +188,7 @@ const SuccessMessage = styled(motion.div)`
 `;
 
 // Contact info styles
-const ContactInfo = styled(motion.div)`
+const ContactInfo = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 40px;
   border-radius: ${({ theme }) => theme.borderRadius.medium};
@@ -289,24 +289,11 @@ const MapTitle = styled.h2`
 `;
 
 const MapContainer = styled.div`
-  height: 450px;
-  border-radius: ${({ theme }) => theme.borderRadius.medium};
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: ${({ theme }) => theme.boxShadow.medium};
-`;
-
-const MapPlaceholder = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e0e0e0;
-  color: ${({ theme }) => theme.colors.text};
-  
-  p {
-    font-size: 1.2rem;
-    margin: 0;
-  }
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
 // FAQ section
@@ -686,11 +673,7 @@ const ContactPage: React.FC = () => {
               </SubmitButton>
             </ContactForm>
             
-            <ContactInfo
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-            >
+            <ContactInfo>
               <InfoTitle>Contact Information</InfoTitle>
               
               <InfoItem>
@@ -699,7 +682,7 @@ const ContactPage: React.FC = () => {
                 </InfoIcon>
                 <InfoContent>
                   <h4>Our Location</h4>
-                  <p>123 Transit Way, Suite 456<br />Minneapolis, MN 55401</p>
+                  <p>6160 Summit Drive<br />Brooklyn Center, MN 55430</p>
                 </InfoContent>
               </InfoItem>
               
@@ -709,7 +692,7 @@ const ContactPage: React.FC = () => {
                 </InfoIcon>
                 <InfoContent>
                   <h4>Phone Number</h4>
-                  <p><a href="tel:+16125551234">(612) 555-1234</a></p>
+                  <p><a href="tel:+16512638764">(651) 263-8764</a></p>
                 </InfoContent>
               </InfoItem>
               
@@ -719,7 +702,7 @@ const ContactPage: React.FC = () => {
                 </InfoIcon>
                 <InfoContent>
                   <h4>Email Address</h4>
-                  <p><a href="mailto:info@firstclasscare.com">info@firstclasscare.com</a></p>
+                  <p><a href="mailto:firstclasscaretransit@gmail.com">firstclasscaretransit@gmail.com</a></p>
                 </InfoContent>
               </InfoItem>
               
@@ -758,9 +741,16 @@ const ContactPage: React.FC = () => {
         <div className="container" style={{ textAlign: 'center' }}>
           <MapTitle>Find Us</MapTitle>
           <MapContainer>
-            <MapPlaceholder>
-              <p>Map will be embedded here - 123 Transit Way, Minneapolis, MN 55401</p>
-            </MapPlaceholder>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.8!2d-93.3265!3d45.0781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b333909377bbbb%3A0x939fc9842f7aee07!2s6160%20Summit%20Dr%20N%2C%20Brooklyn%20Center%2C%20MN%2055430!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="First Class Care Transit Location"
+            />
           </MapContainer>
         </div>
       </MapSection>
@@ -829,7 +819,7 @@ const ContactPage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Link to="/booking" className="btn btn-primary">Book Now</Link>
-              <a href="tel:+16125551234" className="btn btn-secondary">Call Us</a>
+              <a href="tel:+16512638764" className="btn btn-secondary">Call Us</a>
             </motion.div>
           </CTAContent>
         </div>

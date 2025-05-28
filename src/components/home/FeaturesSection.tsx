@@ -72,12 +72,12 @@ const FeaturesSection: React.FC = () => {
     {
       icon: 'fa-heartbeat',
       title: 'Medical Appointments',
-      description: 'Reliable rides to dialysis, therapy, and other medical appointments.'
+      description: 'Reliable rides to medical appointments and healthcare services.'
     },
     {
-      icon: 'fa-route',
-      title: 'Long-Distance Transport',
-      description: 'Comfortable transportation for longer journeys with care and attention.'
+      icon: 'fa-wheelchair',
+      title: 'Wheelchair Transport',
+      description: 'Specialized vehicles and trained staff for wheelchair accessibility.'
     }
   ];
   

@@ -138,21 +138,24 @@ const BookButton = styled(Link)`
   display: block;
   width: 100%;
   margin-top: auto;
-  padding: 14px;
+  padding: 16px;
   text-align: center;
   border-radius: ${({ theme }) => theme.borderRadius.small};
   font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: white;
   border: 2px solid ${({ theme }) => theme.colors.primary};
   transition: all ${({ theme }) => theme.transitions.default};
+  box-shadow: 0 4px 15px rgba(0, 43, 84, 0.15);
   
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.secondary};
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 43, 84, 0.25);
+    border-color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -234,12 +237,54 @@ const CTAContent = styled.div`
   .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    
+    a {
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: ${({ theme }) => theme.borderRadius.small};
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      
+      &.btn-primary {
+        background-color: ${({ theme }) => theme.colors.secondary};
+        color: white;
+        border: 2px solid ${({ theme }) => theme.colors.secondary};
+        
+        &:hover {
+          background-color: white;
+          color: ${({ theme }) => theme.colors.primary};
+          border-color: white;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+      }
+      
+      &.btn-secondary {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 2px solid white;
+        backdrop-filter: blur(10px);
+        
+        &:hover {
+          background-color: white;
+          color: ${({ theme }) => theme.colors.primary};
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       flex-direction: column;
       max-width: 250px;
       margin: 0 auto;
+      
+      a {
+        width: 100%;
+      }
     }
   }
 `;
@@ -273,14 +318,14 @@ const ServicesPage: React.FC = () => {
       ]
     },
     {
-      icon: 'fa-heartbeat',
-      title: 'Dialysis and Therapy Appointments',
-      description: 'We provide reliable and consistent transportation to and from regular medical appointments like dialysis or therapy sessions. We understand the importance of punctuality for these critical appointments.',
+      icon: 'fa-shopping-cart',
+      title: 'Errands & Shopping',
+      description: 'We provide transportation for essential errands and shopping trips. Our drivers can assist with carrying bags and ensuring you have everything you need.',
       features: [
-        'On-time arrival guaranteed',
-        'Regular scheduling available',
-        'Comfortable seating for post-treatment comfort',
-        'Caring staff familiar with medical needs'
+        'Grocery store transportation',
+        'Pharmacy trips',
+        'Shopping assistance',
+        'Flexible wait times'
       ]
     },
     {

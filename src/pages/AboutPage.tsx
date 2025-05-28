@@ -219,7 +219,7 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              <img src="/images/about-image.jpg" alt="FirstClass Care Transit Service" />
+              <img src="/assets/images/elderly-van.jpg" alt="Elderly person getting assistance entering a medical transport van" />
             </AboutImage>
           </AboutGrid>
         </div>

@@ -304,7 +304,7 @@ const Header: React.FC = () => {
             <Link to="/" onClick={closeMenu}>
               <img 
                 src={scrolled ? "/assets/images/logo.png" : "/assets/images/logo-white.png"}
-                alt="FirstClass Care Logo" 
+                alt="First Class Care Transit" 
                 style={{ maxHeight: scrolled ? '45px' : '45px' }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

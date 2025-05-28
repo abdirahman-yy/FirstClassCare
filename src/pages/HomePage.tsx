@@ -41,12 +41,13 @@ const CTAContent = styled.div`
     gap: 20px;
     
     a {
-      padding: 12px 28px;
-      font-size: 1rem;
+      padding: 14px 32px;
+      font-size: 1.1rem;
       font-weight: 600;
       text-decoration: none;
       border-radius: ${({ theme }) => theme.borderRadius.small};
       transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       
       &:first-child {
         background-color: ${({ theme }) => theme.colors.secondary};
@@ -57,17 +58,22 @@ const CTAContent = styled.div`
           background-color: white;
           color: ${({ theme }) => theme.colors.primary};
           border-color: white;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
       }
       
       &:last-child {
-        background-color: transparent;
+        background-color: rgba(255, 255, 255, 0.1);
         color: white;
         border: 2px solid white;
+        backdrop-filter: blur(10px);
         
         &:hover {
           background-color: white;
           color: ${({ theme }) => theme.colors.primary};
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
       }
     }
