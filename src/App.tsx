@@ -9,6 +9,8 @@ import ServicesPage from './pages/ServicesPage';
 import BookingPage from './pages/BookingPage';
 import ContactPage from './pages/ContactPage';
 import AccessibilityPage from './pages/AccessibilityPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const SkipLink = styled.a`
@@ -45,6 +47,8 @@ const App: React.FC = () => {
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Main>

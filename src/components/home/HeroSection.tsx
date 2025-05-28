@@ -18,7 +18,7 @@ const HeroContainer = styled.section`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     background-attachment: scroll;
-    background: linear-gradient(rgba(0, 43, 84, 0.85), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 22, 55, 0.95)), url('/assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center center;
     min-height: 500px;
@@ -28,7 +28,7 @@ const HeroContainer = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     min-height: 450px;
     height: 70vh;
-    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 43, 84, 0.95)), url('/assets/images/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 22, 55, 0.95), rgba(0, 43, 84, 0.98)), url('/assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center center;
   }
@@ -50,12 +50,12 @@ const HeroContent = styled(motion.div)`
     
     @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 2.8rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 2.2rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
       margin-bottom: 20px;
     }
   }
@@ -69,12 +69,12 @@ const HeroContent = styled(motion.div)`
     
     @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 1.6rem;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 1.4rem;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
       margin-bottom: 20px;
     }
   }
@@ -89,13 +89,13 @@ const HeroContent = styled(motion.div)`
     
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
       font-size: 1.1rem;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
       margin-bottom: 35px;
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 1rem;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
       margin-bottom: 30px;
       max-width: 100%;
     }

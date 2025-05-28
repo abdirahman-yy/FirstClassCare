@@ -50,9 +50,9 @@ const NavMenu = styled.nav<{ isOpen: boolean }>`
     right: 0;
     bottom: 0;
     width: 280px;
-    background-color: white;
-    padding: 80px 30px 40px;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 60px 30px 40px;
+    box-shadow: -5px 0 25px rgba(0, 43, 84, 0.15);
     transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
     transition: transform 0.3s ease-in-out;
     overflow-y: auto;
@@ -62,7 +62,7 @@ const NavMenu = styled.nav<{ isOpen: boolean }>`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 260px;
-    padding: 70px 25px 30px;
+    padding: 50px 25px 30px;
   }
 `;
 
@@ -130,10 +130,11 @@ const NavLink = styled(Link)<{ $active: boolean; $scrolled: boolean }>`
     font-size: 1.1rem;
     display: block;
     width: 100%;
-    padding: 15px 0;
+    padding: 16px 0;
     color: ${({ $active, theme }) => 
-      $active ? theme.colors.primary : '#333'};
+      $active ? theme.colors.primary : '#2c3e50'};
     font-weight: ${({ $active }) => $active ? '700' : '600'};
+    border-bottom: 1px solid rgba(0, 43, 84, 0.08);
     
     &::after {
       background-color: ${({ theme }) => theme.colors.primary};
@@ -146,9 +147,9 @@ const NavLink = styled(Link)<{ $active: boolean; $scrolled: boolean }>`
   }
 `;
 
-const BookButton = styled(Link)`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
+const BookButton = styled(Link)<{ $scrolled: boolean }>`
+  background-color: ${({ $scrolled, theme }) => $scrolled ? theme.colors.primary : 'transparent'};
+  color: ${({ $scrolled }) => $scrolled ? 'white' : 'white'};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   padding: 12px 24px;
   font-weight: 600;
@@ -156,8 +157,8 @@ const BookButton = styled(Link)`
   transition: all 0.3s ease;
   margin-left: 40px;
   display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 43, 84, 0.15);
-  border: 2px solid ${({ theme }) => theme.colors.primary};
+  box-shadow: ${({ $scrolled }) => $scrolled ? '0 4px 10px rgba(0, 43, 84, 0.15)' : '0 2px 8px rgba(0, 0, 0, 0.2)'};
+  border: 2px solid ${({ $scrolled, theme }) => $scrolled ? theme.colors.primary : 'white'};
   
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -176,6 +177,7 @@ const BookButton = styled(Link)`
     font-size: 1.1rem;
     font-weight: 700;
     background-color: ${({ theme }) => theme.colors.primary};
+    border: 2px solid ${({ theme }) => theme.colors.primary};
     border-radius: 8px;
     
     &:hover {
@@ -217,7 +219,7 @@ const Overlay = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 43, 84, 0.4);
   z-index: 1000;
   display: none;
   
@@ -254,7 +256,7 @@ const CloseButton = styled.button`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    display: flex;
+    display: none; /* Hide the X button */
   }
 `;
 
@@ -389,14 +391,6 @@ const Header: React.FC = () => {
             role="navigation"
             aria-label="Main Navigation"
           >
-            <CloseButton 
-              onClick={closeMenu} 
-              ref={closeButtonRef}
-              aria-label="Close navigation menu"
-            >
-              <i className="fas fa-times" aria-hidden="true"></i>
-            </CloseButton>
-            
             <NavList as={motion.ul} variants={navVariants} initial="hidden" animate="visible">
               <NavItem variants={itemVariants}>
                 <NavLink to="/" $active={location.pathname === '/'} onClick={closeMenu} $scrolled={scrolled}>
@@ -419,7 +413,7 @@ const Header: React.FC = () => {
                 </NavLink>
               </NavItem>
               <NavItem variants={itemVariants}>
-                <BookButton to="/booking" onClick={closeMenu}>
+                <BookButton to="/booking" onClick={closeMenu} $scrolled={scrolled}>
                   Book a Ride
                 </BookButton>
               </NavItem>
