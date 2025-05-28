@@ -112,7 +112,7 @@ const HomePage = () => {
             Our compassionate team ensures you get there safely and on time, every time.
           </p>
           <div className="buttons">
-            <Link to="/book" style={{
+            <Link to="/booking" style={{
               display: 'inline-block',
               padding: '16px 32px',
               backgroundColor: 'transparent',

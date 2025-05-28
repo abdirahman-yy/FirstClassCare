@@ -49,14 +49,20 @@ const NavMenu = styled.nav<{ isOpen: boolean }>`
     top: 0;
     right: 0;
     bottom: 0;
-    width: 300px;
+    width: 280px;
     background-color: white;
-    padding: 80px 40px;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    padding: 80px 30px 40px;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
     transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 1001;
+    border-left: 4px solid ${({ theme }) => theme.colors.primary};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    width: 260px;
+    padding: 70px 25px 30px;
   }
 `;
 
@@ -66,7 +72,8 @@ const NavList = styled.ul`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
   }
 `;
 
@@ -75,8 +82,14 @@ const NavItem = styled(motion.li)`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     margin-left: 0;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     width: 100%;
+    border-bottom: 1px solid rgba(0, 43, 84, 0.1);
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -114,12 +127,13 @@ const NavLink = styled(Link)<{ $active: boolean; $scrolled: boolean }>`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: block;
     width: 100%;
-    padding: 12px 0;
+    padding: 15px 0;
     color: ${({ $active, theme }) => 
-      $active ? theme.colors.primary : theme.colors.text};
+      $active ? theme.colors.primary : '#333'};
+    font-weight: ${({ $active }) => $active ? '700' : '600'};
     
     &::after {
       background-color: ${({ theme }) => theme.colors.primary};
@@ -127,6 +141,7 @@ const NavLink = styled(Link)<{ $active: boolean; $scrolled: boolean }>`
     
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
+      background-color: rgba(0, 43, 84, 0.05);
     }
   }
 `;
@@ -154,9 +169,19 @@ const BookButton = styled(Link)`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
     text-align: center;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: ${({ theme }) => theme.colors.primary};
+    border-radius: 8px;
+    
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.secondary};
+      transform: none;
+    }
   }
 `;
 
@@ -170,10 +195,15 @@ const MobileMenuBtn = styled.button<{ $scrolled: boolean }>`
   z-index: 1100;
   padding: 10px;
   border-radius: 5px;
+  position: relative;
   
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.secondary};
     outline-offset: 2px;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
@@ -187,8 +217,8 @@ const Overlay = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
   display: none;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
@@ -202,20 +232,29 @@ const CloseButton = styled.button`
   right: 20px;
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.primary};
   display: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.secondary};
     outline-offset: 2px;
   }
   
+  &:hover {
+    background-color: rgba(0, 43, 84, 0.1);
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    display: block;
+    display: flex;
   }
 `;
 

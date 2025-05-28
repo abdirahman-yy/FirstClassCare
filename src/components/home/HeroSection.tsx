@@ -7,6 +7,7 @@ const HeroContainer = styled.section`
   background: linear-gradient(rgba(0, 43, 84, 0.8), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-bg.jpg');
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
   height: 80vh;
   min-height: 550px;
   color: white;
@@ -14,6 +15,23 @@ const HeroContainer = styled.section`
   align-items: center;
   position: relative;
   overflow: hidden;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+    background-attachment: scroll;
+    background: linear-gradient(rgba(0, 43, 84, 0.85), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 500px;
+    height: 75vh;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    min-height: 450px;
+    height: 70vh;
+    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 43, 84, 0.95)), url('/assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
 `;
 
 const HeroContent = styled(motion.div)`
@@ -28,14 +46,17 @@ const HeroContent = styled(motion.div)`
     color: white;
     font-weight: 700;
     letter-spacing: -0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     
     @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 2.8rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 2.2rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
     }
   }
   
@@ -44,13 +65,17 @@ const HeroContent = styled(motion.div)`
     margin-bottom: 25px;
     color: white;
     font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     
     @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
       font-size: 1.6rem;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 1.4rem;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
     }
   }
   
@@ -59,6 +84,21 @@ const HeroContent = styled(motion.div)`
     margin-bottom: 40px;
     max-width: 90%;
     line-height: 1.6;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+      margin-bottom: 35px;
+    }
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      font-size: 1rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
   }
 `;
 
