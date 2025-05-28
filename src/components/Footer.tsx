@@ -259,7 +259,6 @@ const Footer: React.FC = () => {
                 <li><Link to="/services#medical">Medical Appointments</Link></li>
                 <li><Link to="/services#senior">Senior Transportation</Link></li>
                 <li><Link to="/services#wheelchair">Wheelchair Transport</Link></li>
-                <li><Link to="/services#social">Social Events</Link></li>
               </ul>
             </nav>
           </FooterColumn>

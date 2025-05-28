@@ -76,6 +76,8 @@ const AboutText = styled(motion.div)`
   p {
     margin-bottom: 20px;
     line-height: 1.8;
+    color: #333;
+    font-size: 1.1rem;
   }
 `;
 

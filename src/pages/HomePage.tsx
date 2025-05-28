@@ -95,7 +95,7 @@ const CTAContent = styled.div`
 const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'FirstClass Care Transit - Safe and Reliable Medical Transportation';
+    document.title = 'First Class Care Transit - Safe and Reliable Medical Transportation';
   }, []);
 
   return (
@@ -108,11 +108,23 @@ const HomePage = () => {
           <h2>Need a Ride You Can Count On?</h2>
           <p>
             Whether you need transportation to your medical appointments, hospital discharge,
-            or any other healthcare-related service, FirstClass Care Transit is here for you.
+            or any other healthcare-related service, First Class Care Transit is here for you.
             Our compassionate team ensures you get there safely and on time, every time.
           </p>
           <div className="buttons">
-            <Link to="/book">Book Your Ride Today</Link>
+            <Link to="/book" style={{
+              display: 'inline-block',
+              padding: '16px 32px',
+              backgroundColor: 'transparent',
+              color: 'white',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              border: '2px solid white',
+              transition: 'all 0.3s ease',
+              marginRight: '15px'
+            }}>Book Your Ride Today</Link>
             <Link to="/services">Learn More</Link>
           </div>
         </CTAContent>

@@ -140,7 +140,7 @@ const HeroSection: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 variants={itemVariants}>FirstClass Care</motion.h1>
+          <motion.h1 variants={itemVariants}>First Class Care</motion.h1>
           <motion.h2 variants={itemVariants}>Safe & Reliable Medical Transportation</motion.h2>
           <motion.p variants={itemVariants}>
             Professional, comfortable, and stress-free transportation for medical appointments and healthcare services.
