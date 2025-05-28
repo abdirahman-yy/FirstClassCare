@@ -213,7 +213,7 @@ const Footer: React.FC = () => {
             <Link to="/" aria-label="Home page">
               <img 
                 src="/assets/images/logo-white.png" 
-                alt="FirstClass Care Logo" 
+                alt="First Class Care Logo" 
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.onerror = null;
@@ -222,7 +222,7 @@ const Footer: React.FC = () => {
                 style={{ maxHeight: '50px', objectFit: 'contain', width: 'auto' }}
               />
             </Link>
-            <p>FirstClass Care provides safe, reliable transportation services for medical appointments, senior transportation, and more. Our professional drivers ensure every client receives the highest level of care with dignity and respect.</p>
+            <p>First Class Care provides safe, reliable transportation services for medical appointments, senior transportation, and more. Our professional drivers ensure every client receives the highest level of care with dignity and respect.</p>
             <SocialIcons aria-label="Social media links">
               <a href="https://facebook.com" aria-label="Follow us on Facebook">
                 <i className="fab fa-facebook-f" aria-hidden="true"></i>
@@ -258,9 +258,7 @@ const Footer: React.FC = () => {
               <ul>
                 <li><Link to="/services#medical">Medical Appointments</Link></li>
                 <li><Link to="/services#senior">Senior Transportation</Link></li>
-                <li><Link to="/services#dialysis">Dialysis & Therapy</Link></li>
                 <li><Link to="/services#wheelchair">Wheelchair Transport</Link></li>
-                <li><Link to="/services#errands">Errands & Shopping</Link></li>
                 <li><Link to="/services#social">Social Events</Link></li>
               </ul>
             </nav>
@@ -289,7 +287,7 @@ const Footer: React.FC = () => {
         <FooterBottom>
           <div className="container">
             <div className="copyright">
-              &copy; {currentYear} FirstClass Care Transit. All Rights Reserved.
+              &copy; {currentYear} First Class Care Transit. All Rights Reserved.
             </div>
             <div className="links">
               <Link to="/privacy">Privacy Policy</Link>

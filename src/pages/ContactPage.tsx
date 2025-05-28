@@ -414,12 +414,57 @@ const CTAContent = styled.div`
   .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
       flex-direction: column;
       max-width: 250px;
       margin: 0 auto;
+    }
+  }
+  
+  .btn {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    
+    &.btn-primary {
+      background-color: white;
+      color: ${({ theme }) => theme.colors.primary};
+      border-color: white;
+      
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.secondary};
+        color: white;
+        border-color: ${({ theme }) => theme.colors.secondary};
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
+    &.btn-secondary {
+      background-color: transparent;
+      color: white;
+      border-color: white;
+      
+      &:hover {
+        background-color: white;
+        color: ${({ theme }) => theme.colors.primary};
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 `;
@@ -742,14 +787,14 @@ const ContactPage: React.FC = () => {
           <MapTitle>Find Us</MapTitle>
           <MapContainer>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.8!2d-93.3265!3d45.0781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b333909377bbbb%3A0x939fc9842f7aee07!2s6160%20Summit%20Dr%20N%2C%20Brooklyn%20Center%2C%20MN%2055430!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.6567835645247!2d-93.32648892326887!3d45.078142371075066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b333d7f9f7b4a5%3A0x8f2e8b45c2c5f3d7!2s6160%20Summit%20Dr%20N%2C%20Brooklyn%20Center%2C%20MN%2055430%2C%20USA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="First Class Care Transit Location"
+              title="First Class Care Transit Location - 6160 Summit Drive, Brooklyn Center, MN 55430"
             />
           </MapContainer>
         </div>

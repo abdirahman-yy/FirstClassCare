@@ -142,12 +142,14 @@ const BookButton = styled(Link)`
   margin-left: 40px;
   display: inline-block;
   box-shadow: 0 4px 10px rgba(0, 43, 84, 0.15);
+  border: 2px solid ${({ theme }) => theme.colors.primary};
   
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 43, 84, 0.25);
+    border-color: ${({ theme }) => theme.colors.secondary};
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {

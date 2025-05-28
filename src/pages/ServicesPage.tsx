@@ -239,52 +239,55 @@ const CTAContent = styled.div`
     justify-content: center;
     gap: 20px;
     
-    a {
-      padding: 16px 32px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: ${({ theme }) => theme.borderRadius.small};
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+  
+  .btn {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    
+    &.btn-primary {
+      background-color: white;
+      color: ${({ theme }) => theme.colors.primary};
+      border-color: white;
       
-      &.btn-primary {
+      &:hover {
         background-color: ${({ theme }) => theme.colors.secondary};
         color: white;
-        border: 2px solid ${({ theme }) => theme.colors.secondary};
-        
-        &:hover {
-          background-color: white;
-          color: ${({ theme }) => theme.colors.primary};
-          border-color: white;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
+        border-color: ${({ theme }) => theme.colors.secondary};
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       }
+    }
+    
+    &.btn-secondary {
+      background-color: transparent;
+      color: white;
+      border-color: white;
       
-      &.btn-secondary {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 2px solid white;
-        backdrop-filter: blur(10px);
-        
-        &:hover {
-          background-color: white;
-          color: ${({ theme }) => theme.colors.primary};
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
+      &:hover {
+        background-color: white;
+        color: ${({ theme }) => theme.colors.primary};
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       }
     }
     
     @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-      flex-direction: column;
+      width: 100%;
       max-width: 250px;
-      margin: 0 auto;
-      
-      a {
-        width: 100%;
-      }
     }
   }
 `;
@@ -315,17 +318,6 @@ const ServicesPage: React.FC = () => {
         'Vehicles equipped for mobility aids',
         'Patient, understanding drivers',
         'Flexible scheduling'
-      ]
-    },
-    {
-      icon: 'fa-shopping-cart',
-      title: 'Errands & Shopping',
-      description: 'We provide transportation for essential errands and shopping trips. Our drivers can assist with carrying bags and ensuring you have everything you need.',
-      features: [
-        'Grocery store transportation',
-        'Pharmacy trips',
-        'Shopping assistance',
-        'Flexible wait times'
       ]
     },
     {
@@ -384,7 +376,7 @@ const ServicesPage: React.FC = () => {
             transition={{ duration: 0.7 }}
           >
             <h2>Transportation You Can Trust</h2>
-            <p>At FirstClass Care Transit, we offer a range of transportation services designed to meet your unique needs. All of our services come with the same commitment to safety, comfort, and personalized care.</p>
+            <p>At First Class Care Transit, we offer a range of transportation services designed to meet your unique needs. All of our services come with the same commitment to safety, comfort, and personalized care.</p>
             <p>We accept both private pay and insurance for our services. Contact us to learn more about coverage options.</p>
           </ServicesText>
         </div>
