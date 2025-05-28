@@ -228,38 +228,6 @@ const Overlay = styled(motion.div)`
   }
 `;
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.primary};
-  display: none;
-  padding: 10px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.secondary};
-    outline-offset: 2px;
-  }
-  
-  &:hover {
-    background-color: rgba(0, 43, 84, 0.1);
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    display: none; /* Hide the X button */
-  }
-`;
-
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -369,7 +337,7 @@ const Header: React.FC = () => {
             aria-controls="mobile-menu"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            <i className="fas fa-bars" aria-hidden="true"></i>
+            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`} aria-hidden="true"></i>
           </MobileMenuBtn>
           
           <AnimatePresence>
