@@ -158,6 +158,14 @@ const CTAContent = styled.div`
   }
 `;
 
+const ImageContainer = styled.div`
+  img {
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
+    box-shadow: ${({ theme }) => theme.boxShadow.medium};
+    width: 100%;
+  }
+`;
+
 const AboutPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -209,9 +217,9 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <h2>Our Story</h2>
-              <p>At FirstClass Care, we treat every rider like family. Our goal is to make sure your ride is safe, comfortable, and stress free every time.</p>
+              <p>At First Class Care, we treat every rider like family. Our goal is to make sure your ride is safe, comfortable, and stress free every time.</p>
               <p>Growing up, I saw my grandparents struggle to get to doctor's appointments and other places because rides weren't always easy to find. I told myself then: One day, I'll make sure our elders always have a ride they can count on.</p>
-              <p>That promise became FirstClass Care, a transportation service that puts your needs first. Whether it's a trip to a medical appointment, family gathering, or anywhere else, we're here to help you get there with kindness and respect.</p>
+              <p>That promise became First Class Care, a transportation service that puts your needs first. Whether it's a trip to a medical appointment, family gathering, or anywhere else, we're here to help you get there with kindness and respect.</p>
               <p>From the moment you step into our vehicle, we'll make sure you feel cared for and supported just like family.</p>
             </AboutText>
             <AboutImage
@@ -219,7 +227,7 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              <img src="/assets/images/elderly-van.jpg" alt="Elderly person getting assistance entering a medical transport van" />
+              <img src="/assets/images/hero-bg.jpg" alt="Professional medical transportation service" />
             </AboutImage>
           </AboutGrid>
         </div>
@@ -257,7 +265,7 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Experience the FirstClass Care Difference
+              Experience the First Class Care Difference
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -273,7 +281,38 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Link to="/booking" className="btn btn-primary">Book Your Ride Today</Link>
+              <Link 
+                to="/booking" 
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 32px',
+                  backgroundColor: 'white',
+                  color: '#002B54',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease',
+                  border: '2px solid white',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLElement;
+                  target.style.backgroundColor = '#1A75C1';
+                  target.style.color = 'white';
+                  target.style.transform = 'translateY(-2px)';
+                  target.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLElement;
+                  target.style.backgroundColor = 'white';
+                  target.style.color = '#002B54';
+                  target.style.transform = 'translateY(0)';
+                  target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                }}
+              >
+                Book Your Ride Today
+              </Link>
             </motion.div>
           </CTAContent>
         </div>
