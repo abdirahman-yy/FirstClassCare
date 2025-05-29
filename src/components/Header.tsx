@@ -51,17 +51,20 @@ const NavMenu = styled.nav<{ isOpen: boolean }>`
     bottom: 0;
     width: 300px;
     background: white;
-    padding: 80px 0 40px;
+    padding: 20px 0 40px;
     box-shadow: -8px 0 32px rgba(0, 43, 84, 0.15);
     transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
     transition: transform 0.3s ease-in-out;
     overflow-y: auto;
     z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 280px;
-    padding: 70px 0 30px;
+    padding: 15px 0 30px;
   }
 `;
 
@@ -75,6 +78,7 @@ const NavList = styled.ul`
     width: 100%;
     padding: 0;
     margin: 0;
+    margin-top: 60px; /* Start below the header area */
   }
 `;
 
