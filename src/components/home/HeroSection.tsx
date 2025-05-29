@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const HeroContainer = styled.section`
-  background: linear-gradient(rgba(0, 43, 84, 0.8), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-new.jpg');
+  background: linear-gradient(rgba(0, 43, 84, 0.8), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-main.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -19,7 +19,7 @@ const HeroContainer = styled.section`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     background-attachment: scroll;
-    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 22, 55, 0.95)), url('/assets/images/hero-new.jpg');
+    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 22, 55, 0.95)), url('/assets/images/hero-main.jpg');
     background-size: cover;
     background-position: center center;
     min-height: 550px;
@@ -30,7 +30,7 @@ const HeroContainer = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     min-height: 500px;
     height: 100vh;
-    background: linear-gradient(rgba(0, 22, 55, 0.95), rgba(0, 43, 84, 0.98)), url('/assets/images/hero-new.jpg');
+    background: linear-gradient(rgba(0, 22, 55, 0.95), rgba(0, 43, 84, 0.98)), url('/assets/images/hero-main.jpg');
     background-size: cover;
     background-position: center center;
     padding-top: 120px; /* Even more padding for smaller screens */
