@@ -49,20 +49,19 @@ const NavMenu = styled.nav<{ isOpen: boolean }>`
     top: 0;
     right: 0;
     bottom: 0;
-    width: 280px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 60px 30px 40px;
-    box-shadow: -5px 0 25px rgba(0, 43, 84, 0.15);
+    width: 300px;
+    background: white;
+    padding: 80px 0 40px;
+    box-shadow: -8px 0 32px rgba(0, 43, 84, 0.15);
     transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
     transition: transform 0.3s ease-in-out;
     overflow-y: auto;
     z-index: 1001;
-    border-left: 4px solid ${({ theme }) => theme.colors.primary};
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    width: 260px;
-    padding: 50px 25px 30px;
+    width: 280px;
+    padding: 70px 0 30px;
   }
 `;
 
@@ -74,6 +73,8 @@ const NavList = styled.ul`
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
 `;
 
@@ -82,13 +83,12 @@ const NavItem = styled(motion.li)`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     margin-left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     width: 100%;
-    border-bottom: 1px solid rgba(0, 43, 84, 0.1);
     
     &:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
+      margin-top: 30px;
+      padding: 0 30px;
     }
   }
 `;
@@ -130,19 +130,25 @@ const NavLink = styled(Link)<{ $active: boolean; $scrolled: boolean }>`
     font-size: 1.1rem;
     display: block;
     width: 100%;
-    padding: 16px 0;
+    padding: 18px 30px;
     color: ${({ $active, theme }) => 
-      $active ? theme.colors.primary : '#2c3e50'};
+      $active ? theme.colors.primary : '#34495e'};
     font-weight: ${({ $active }) => $active ? '700' : '600'};
-    border-bottom: 1px solid rgba(0, 43, 84, 0.08);
+    border-bottom: 1px solid #ecf0f1;
     
     &::after {
       background-color: ${({ theme }) => theme.colors.primary};
+      left: 30px;
+      width: ${({ $active }) => ($active ? 'calc(100% - 60px)' : '0')};
     }
     
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
-      background-color: rgba(0, 43, 84, 0.05);
+      background-color: #f8f9fa;
+      
+      &::after {
+        width: calc(100% - 60px);
+      }
     }
   }
 `;
@@ -170,8 +176,8 @@ const BookButton = styled(Link)<{ $scrolled: boolean }>`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     margin-left: 0;
-    margin-top: 30px;
-    width: 100%;
+    margin-top: 0;
+    width: calc(100% - 60px);
     text-align: center;
     padding: 16px 24px;
     font-size: 1.1rem;
@@ -183,6 +189,7 @@ const BookButton = styled(Link)<{ $scrolled: boolean }>`
     &:hover {
       background-color: ${({ theme }) => theme.colors.secondary};
       transform: none;
+      border-color: ${({ theme }) => theme.colors.secondary};
     }
   }
 `;

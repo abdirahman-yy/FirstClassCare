@@ -4,33 +4,36 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const HeroContainer = styled.section`
-  background: linear-gradient(rgba(0, 43, 84, 0.8), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-bg.jpg');
+  background: linear-gradient(rgba(0, 43, 84, 0.8), rgba(0, 43, 84, 0.9)), url('/assets/images/hero-new.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  height: 80vh;
-  min-height: 550px;
+  height: 100vh;
+  min-height: 600px;
   color: white;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding-top: 80px; /* Account for fixed header */
   
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
     background-attachment: scroll;
-    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 22, 55, 0.95)), url('/assets/images/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 43, 84, 0.9), rgba(0, 22, 55, 0.95)), url('/assets/images/hero-new.jpg');
     background-size: cover;
     background-position: center center;
-    min-height: 500px;
-    height: 75vh;
+    min-height: 550px;
+    height: 100vh;
+    padding-top: 100px; /* More padding for mobile header */
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    min-height: 450px;
-    height: 70vh;
-    background: linear-gradient(rgba(0, 22, 55, 0.95), rgba(0, 43, 84, 0.98)), url('/assets/images/hero-bg.jpg');
+    min-height: 500px;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 22, 55, 0.95), rgba(0, 43, 84, 0.98)), url('/assets/images/hero-new.jpg');
     background-size: cover;
     background-position: center center;
+    padding-top: 120px; /* Even more padding for smaller screens */
   }
 `;
 
